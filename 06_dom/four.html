@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color:aliceblue">
+    <ul class="language">
+        <li>
+            Javascript
+        </li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage('python');
+    addLanguage('Typescript');
+
+
+    function addOptLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptLanguage('Java')
+    addOptLanguage('Golang')
+
+    //Edit an element
+    const thirdChild = document.querySelector('li:nth-child(3)');
+    console.log(thirdChild);
+    const newThirdChild = document.createElement('li')
+    newThirdChild.textContent = 'php'
+    thirdChild.replaceWith(newThirdChild);
+
+    // remove an element
+    const firstLi = document.querySelector('li:first-child');
+    firstLi.remove()
+
+</script>
+</html>
